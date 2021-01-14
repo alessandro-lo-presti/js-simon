@@ -4,6 +4,7 @@
 
 var arrayRandom = [];
 var numeroRandom;
+var t = 30;
 
 // ciclo che riempie arrayRandom con numeri casuali
 while(arrayRandom.length < 5) {
@@ -18,8 +19,18 @@ while(arrayRandom.length < 5) {
 // alert che mostra i numeri da indovinare
 alert(arrayRandom);
 
-// aspetta 30 secondi ed esegue la funzione indovina
-setTimeout(indovina, 30000, arrayRandom);
+// timer
+var timer = setInterval(function() {
+  if(t == 0) {
+    document.getElementById("timer").innerHTML = "Game";
+    clearInterval(timer);
+    //
+    indovina(arrayRandom);
+  }
+  else {
+    document.getElementById("timer").innerHTML = t--;
+  }
+}, 1000);
 
 
 // funzioni

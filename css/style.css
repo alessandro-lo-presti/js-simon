@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#timer {
+  line-height: 100vh;
+  text-align: center;
+  font-size: 160px;
+}
