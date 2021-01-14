@@ -4,7 +4,7 @@
 
 var arrayRandom = [];
 var numeroRandom;
-var t = 30;
+var t = 5;
 
 // ciclo che riempie arrayRandom con numeri casuali
 while(arrayRandom.length < 5) {
@@ -21,11 +21,15 @@ alert(arrayRandom);
 
 // timer
 var timer = setInterval(function() {
+  var risultato;
+
   if(t == 0) {
     document.getElementById("timer").innerHTML = "Game";
     clearInterval(timer);
-    //
-    indovina(arrayRandom);
+    risultato = indovina(arrayRandom);
+    document.getElementById("timer").innerHTML = "End";
+    document.getElementById("score").innerHTML = "Punteggio: " + risultato.length;
+    document.getElementById("numbers").innerHTML = "Indovinati: " + risultato;
   }
   else {
     document.getElementById("timer").innerHTML = t--;
@@ -48,7 +52,5 @@ function indovina(numeriNascosti) {
       }
   }
 
-  // stampa risultati
-  console.log("Punteggio: " + risposteCorrette.length);
-  console.log("Hai indovinato questi numeri: " + risposteCorrette);
+  return risposteCorrette;
 }
