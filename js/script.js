@@ -19,7 +19,7 @@ while(arrayRandom.length < 5) {
 alert(arrayRandom);
 
 // aspetta 30 secondi ed esegue la funzione indovina
-setTimeout(indovina, 1000, arrayRandom);
+setTimeout(indovina, 30000, arrayRandom);
 
 
 // funzioni
