@@ -17,7 +17,7 @@ while(arrayRandom.length < 5) {
 }
 
 // alert che mostra i numeri da indovinare
-alert(arrayRandom);
+alert("Memorizza questi numeri: " + arrayRandom);
 
 // timer
 var timer = setInterval(function() {
