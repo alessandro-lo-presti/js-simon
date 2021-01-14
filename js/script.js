@@ -4,7 +4,7 @@
 
 var arrayRandom = [];
 var numeroRandom;
-var t = 5;
+var t = 30;
 
 // ciclo che riempie arrayRandom con numeri casuali
 while(arrayRandom.length < 5) {
@@ -46,8 +46,15 @@ function indovina(numeriNascosti) {
   for(var i = 0; i < numeriNascosti.length; i++) {
       numeroScelto = parseInt(prompt("Inserisci un numero da 1 a 100"));
 
-      // controllo che verifica se una risposta è corretta e che non sia stata già data
-      if(numeriNascosti.includes(numeroScelto) && !risposteCorrette.includes(numeroScelto)) {
+      if(risposteCorrette.includes(numeroScelto)) {
+        alert("Questo numero è stato già inserito. Ritenta");
+        i--;
+      }
+      else if (numeroScelto < 0 || numeroScelto > 100 || isNaN(numeroScelto)) {
+        alert("Il numero inserito non è valido. Ritenta");
+        i--;
+      }
+      else if(numeriNascosti.includes(numeroScelto)) {
         risposteCorrette.push(numeroScelto);
       }
   }
