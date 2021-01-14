@@ -39,6 +39,7 @@ var timer = setInterval(function() {
 
 // funzioni
 function indovina(numeriNascosti) {
+  var risposte = [];
   var risposteCorrette = [];
   var numeroScelto;
 
@@ -46,16 +47,20 @@ function indovina(numeriNascosti) {
   for(var i = 0; i < numeriNascosti.length; i++) {
       numeroScelto = parseInt(prompt("Inserisci un numero da 1 a 100"));
 
-      if(risposteCorrette.includes(numeroScelto)) {
-        alert("Questo numero è stato già inserito. Ritenta");
+      if(risposte.includes(numeroScelto)) {
+        alert("Hai già inserito questo numero. Ritenta");
         i--;
       }
       else if (numeroScelto < 0 || numeroScelto > 100 || isNaN(numeroScelto)) {
         alert("Il numero inserito non è valido. Ritenta");
         i--;
       }
-      else if(numeriNascosti.includes(numeroScelto)) {
-        risposteCorrette.push(numeroScelto);
+      else {
+        risposte.push(numeroScelto);
+        
+        if(numeriNascosti.includes(numeroScelto)) {
+          risposteCorrette.push(numeroScelto);
+        }
       }
   }
 
